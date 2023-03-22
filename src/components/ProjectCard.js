@@ -8,7 +8,7 @@ import  Col from 'react-bootstrap/Col';
 const ProjectCard = ({src, title, pageLink, codeLink, description}) => {
 
     return (
-        <Card  className=" text-dark m-2 h-100 border-0">
+        <Card  className=" text-dark border-0 h-100">
       <Card.Img variant="top" src={src}  alt={title}/>
       <Card.Body>
         <Card.Title>{title}</Card.Title>

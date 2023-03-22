@@ -29,18 +29,19 @@ const ProjectSection = () => {
   return (
     <Container
       fluid
-      className="min-vw-100 min-vh-100 mw-100 mh-100 
+      className="min-vw-100 min-vh-100 
       bg-gradient 
       text-light bg-success"
     >
-      <Container className="mb-2 d-flex flex-row">
+      
         <h1>Featured Projects</h1>
-      </Container>
-      <Row>
-        {" "}
+      
+    <Row className="gap-2 d-flex justify-content-evenly">
+
+        
         {projects.map((project) => (
-          <Col sm={12} md={6} key={project.title}>
-            {" "}
+          <Col xs={10} md={5} key={project.title} className="m-2" >
+            
             <ProjectCard
               title={project.title}
               description={project.description}
@@ -50,6 +51,7 @@ const ProjectSection = () => {
             />
           </Col>
         ))}
+        
       </Row>
     </Container>
   );

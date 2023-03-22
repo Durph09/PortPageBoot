@@ -9,7 +9,7 @@ export const TextInputBS = ({ label, ...props }) => {
     return (
       <Form.Group>
         <Form.Label>{label}</Form.Label>
-        <Form.Control
+        <Form.Control className="bg-transparent text-light"
           {...field}
           {...props}
           isInvalid={meta.touched && meta.error}
@@ -26,7 +26,7 @@ export const MyselectBS = ({label, ...props}) => {
     return (
         <Form.Group>
             <Form.Label htmlFor={props.id || props.name}>{label}</Form.Label>
-            <Form.Select {...field} {...props} />
+            <Form.Select {...field} {...props} className="bg-transparent text-light" />
             {meta.touched && meta.erra ? (
                 <div className ="error">{meta.error}</div>
             ) : null}

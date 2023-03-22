@@ -88,7 +88,7 @@ const schema = Yup.object().shape({
             placeholder="comment" 
 />
 
-            <Button type="submit">submit</Button>
+            <Button type="submit" variant="outline-light">submit</Button>
             </Col>
           </Row></Form>
           </Formik> 
