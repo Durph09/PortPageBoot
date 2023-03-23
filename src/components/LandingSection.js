@@ -12,7 +12,7 @@ const LandingSection = () => {
       style={{ backgroundColor: "rgb(42,67,101)" }}
     >
       <Col>
-        <Slide direction="left">
+        
           <Image
             roundedCircle
             fluid
@@ -20,7 +20,7 @@ const LandingSection = () => {
             style={{ maxWidth: "200px" }}
             alt="pic of Conor Mahaney"
           />
-        </Slide>
+        
         
           <h4> Hello, I'm Conor</h4>
         
