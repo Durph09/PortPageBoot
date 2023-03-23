@@ -1,16 +1,27 @@
-
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import * as Yup from "yup";
-import { Formik, Form} from "formik";
+import { Formik, Form } from "formik";
 import { TextInputBS, MyselectBS } from "./FormFeildBS";
-import  Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Button from "react-bootstrap/Button"
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import SuccessModal from "./SuccessModal";
+import { useState } from "react";
 
-const formik = Formik
 const ContactMeBS = () => {
+  const [firstName, setFirstName] = useState("");
+
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -25,79 +36,93 @@ const ContactMeBS = () => {
         (result) => {
           console.log(result.text);
           form.current.reset();
+          handleShowModal();
         },
         (error) => {
           console.log(error.text);
         }
       );
   };
-const schema = Yup.object().shape({
-      firstName: Yup.string().required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
-      comment: Yup.string()
-        .min(25, "Must be at least 25 characters")
-        .required("Required"),
-    });
+  const schema = Yup.object().shape({
+    firstName: Yup.string().required("Required"),
+    email: Yup.string().email("Invalid email address").required("Required"),
+    comment: Yup.string()
+      .min(25, "Must be at least 25 characters")
+      .required("Required"),
+  });
 
   return (
     <Container
       fluid
-      className="vw-100 vh-100 text-light text-start"
-      style={{ backgroundColor: "#512da8" }}>
-   
-      <h1>Contact me</h1>
-<Formik
-    validationSchema={schema}
-    onSubmit={(values) => sendEmail(values)}
-    initialValues= {{
-      firstName: "",
-      email: "",
-      type: "hireMe",
-      comment: "",}}
+      className="vw-100 vh-100 text-light text-start "
+      style={{ backgroundColor: "#512da8" }}
+    >
+      <h1 id="contact-section">Contact me</h1>
+      <Formik
+        validationSchema={schema}
+        onSubmit={(values) => {
+          setFirstName(values.firstName);
+          console.log(firstName);
+          sendEmail(values);
+        }}
+        initialValues={{
+          firstName: "",
+          email: "",
+          type: "hireMe",
+          comment: "",
+        }}
       >
+        <Form ref={form}>
+          <Row className="gap-2 d-flex justify-content-evenly">
+            <Col md={6} xs={11}>
+              <TextInputBS
+                label="First Name"
+                name="firstName"
+                type="text"
+                placeholder="Name"
+              />
 
+              <TextInputBS
+                label="email"
+                name="email"
+                type="email"
+                placeholder="email"
+              />
+              <MyselectBS label="Type of enquiry" name="type">
+                <option value="hireMe">Freelance project proposal</option>
+                <option value="openSource">
+                  Open source consultancy session
+                </option>
+                <option value="other">Other</option>
+              </MyselectBS>
 
-     <Form ref={form}>
-     <Row>
-          <Col md={6} xs={11}>
-          <TextInputBS
-            label="First Name"
-            name="firstName"
-            type="text"
-            placeholder="Name"
-            />
+              <TextInputBS
+                label="comment"
+                name="comment"
+                type="text-area"
+                placeholder="comment"
+              />
 
-            <TextInputBS
-            label ="email"
-            name="email"
-            type="email"
-            placeholder="email"
-            />
-            <MyselectBS label="Type of enquiry" name="type">
-            <option value="hireMe">Freelance project proposal</option>
-              <option value="openSource">
-                Open source consultancy session
-              </option>
-              <option value="other">Other</option>
-            </MyselectBS>
-
-            <TextInputBS
-            label="comment"
-            name="comment"
-            type="text-area"
-            placeholder="comment" 
-/>
-
-            <Button type="submit" variant="outline-light">submit</Button>
+              <Button
+                size="lg"
+                type="submit"
+                variant="outline-light"
+                className="my-3"
+              >
+                Submit
+              </Button>
             </Col>
-          </Row></Form>
-          </Formik> 
-</Container>
-           
-   
-   
+          </Row>
+        </Form>
+      </Formik>
+
+      <SuccessModal
+        firstName={firstName}
+        show={showModal}
+        onHide={handleCloseModal}
+      />
+    </Container>
   );
 };
 
 export default ContactMeBS;
-

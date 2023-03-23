@@ -9,8 +9,7 @@ import {
 
 } from "@fortawesome/free-brands-svg-icons"
 import { useRef, useEffect } from "react";
-import { NavbarBrand } from "react-bootstrap";
-import { NavDropdown } from "react-bootstrap";
+
 
 
 const socials = [
@@ -61,19 +60,32 @@ export default function NavBar() {
     const handleClick = (anchor) => () => { 
       const id = `${anchor}-section`; 
       const element = document.getElementById(id); 
-      if (element) { 
-        element.scrollIntoView({ 
-          behavior: "smooth", 
-          block: "start", 
-        }); 
-      } 
-    }; 
+      if (element) {
+        const navbarHeight = headerRef.current.clientHeight;
+        const elementPosition = element.offsetTop - navbarHeight;
+        element.scrollIntoView({
+          behavior: "smooth",
+          top: elementPosition,
+          block: "start"
+        });
+    };
+  }; 
   return (
 
 
     
     
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" ref={headerRef} 
+    style={{
+      position:"fixed", 
+      top:"0", 
+      left:"0",
+      right:"0", 
+      translateY:"0", 
+      transitionProperty:"transform", 
+      transitionDuration:".3s", 
+      transitionTimingFunction:"ease-in-out"}} 
+    >
     <Container>
        
           {socials.map(({ icon, url }) => ( 
@@ -89,26 +101,11 @@ export default function NavBar() {
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="#projects" onClick={handleClick("projects")}>Projects</Nav.Link>
+            <Nav.Link href="#contact" onClick={handleClick("contact")}>Contact Me</Nav.Link>
+            
           </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
-          </Nav>
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>

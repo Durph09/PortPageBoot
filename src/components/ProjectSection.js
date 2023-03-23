@@ -1,6 +1,5 @@
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-import thumbnail from "./images/thumbPic.jpg";
 import Col from "react-bootstrap/Col";
 import ProjectCard from "./ProjectCard";
 import portfolioProj from "./images/portfolioProj.png";
@@ -31,17 +30,14 @@ const ProjectSection = () => {
       fluid
       className="min-vw-100 min-vh-100 
       bg-gradient 
-      text-light bg-success"
+      text-light bg-success
+      "
     >
-      
-        <h1>Featured Projects</h1>
-      
-    <Row className="gap-2 d-flex justify-content-evenly">
+      <h1 id="projects-section">Featured Projects</h1>
 
-        
+      <Row className="gap-2 d-flex justify-content-evenly">
         {projects.map((project) => (
-          <Col xs={10} md={5} key={project.title} className="m-2" >
-            
+          <Col xs={10} md={5} key={project.title} className="my-2">
             <ProjectCard
               title={project.title}
               description={project.description}
@@ -51,7 +47,6 @@ const ProjectSection = () => {
             />
           </Col>
         ))}
-        
       </Row>
     </Container>
   );
