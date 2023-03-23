@@ -86,7 +86,7 @@ export default function NavBar() {
       transitionDuration:".3s", 
       transitionTimingFunction:"ease-in-out"}} 
     >
-    <Container>
+    
        
           {socials.map(({ icon, url }) => ( 
                 <Navbar.Brand className="mx-2"
@@ -107,7 +107,7 @@ export default function NavBar() {
           </Nav>
          
         </Navbar.Collapse>
-      </Container>
+      
     </Navbar>
       
     
