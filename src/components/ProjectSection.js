@@ -28,11 +28,13 @@ const ProjectSection = () => {
   return (
     <Container
       fluid
-      className="min-vw-100 min-vh-100 
+      className=" 
+      vh-100 
       bg-gradient 
       text-light bg-success
       "
     >
+    <Container>
       <h1 id="projects-section">Featured Projects</h1>
 
       <Row className="gap-2 d-flex justify-content-evenly">
@@ -47,7 +49,7 @@ const ProjectSection = () => {
             />
           </Col>
         ))}
-      </Row>
+      </Row></Container>
     </Container>
   );
 };

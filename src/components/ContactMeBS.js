@@ -54,73 +54,75 @@ const ContactMeBS = () => {
   return (
     <Container
       fluid
-      className="vw-100 vh-100 text-light text-start "
+      className="vh-100 text-light text-start m-0 p-0 "
       style={{ backgroundColor: "#512da8" }}
     >
-      <h1 id="contact-section">Contact me</h1>
-      <Formik
-        validationSchema={schema}
-        onSubmit={(values) => {
-          setFirstName(values.firstName);
-          console.log(firstName);
-          sendEmail(values);
-        }}
-        initialValues={{
-          firstName: "",
-          email: "",
-          type: "hireMe",
-          comment: "",
-        }}
-      >
-        <Form ref={form}>
-          <Row className="gap-2 d-flex justify-content-evenly">
-            <Col md={6} xs={11}>
-              <TextInputBS
-                label="First Name"
-                name="firstName"
-                type="text"
-                placeholder="Name"
-              />
+      <Container>
+        <h1 id="contact-section">Contact me</h1>
+        <Formik
+          validationSchema={schema}
+          onSubmit={(values) => {
+            setFirstName(values.firstName);
+            console.log(firstName);
+            sendEmail(values);
+          }}
+          initialValues={{
+            firstName: "",
+            email: "",
+            type: "hireMe",
+            comment: "",
+          }}
+        >
+          <Form ref={form}>
+            <Row className="gap-2 d-flex justify-content-evenly">
+              <Col md={6} xs={11}>
+                <TextInputBS
+                  label="First Name"
+                  name="firstName"
+                  type="text"
+                  placeholder="Name"
+                />
 
-              <TextInputBS
-                label="email"
-                name="email"
-                type="email"
-                placeholder="email"
-              />
-              <MyselectBS label="Type of enquiry" name="type">
-                <option value="hireMe">Freelance project proposal</option>
-                <option value="openSource">
-                  Open source consultancy session
-                </option>
-                <option value="other">Other</option>
-              </MyselectBS>
+                <TextInputBS
+                  label="email"
+                  name="email"
+                  type="email"
+                  placeholder="email"
+                />
+                <MyselectBS label="Type of enquiry" name="type">
+                  <option value="hireMe">Freelance project proposal</option>
+                  <option value="openSource">
+                    Open source consultancy session
+                  </option>
+                  <option value="other">Other</option>
+                </MyselectBS>
 
-              <TextInputBS
-                label="comment"
-                name="comment"
-                type="text-area"
-                placeholder="comment"
-              />
+                <TextInputBS
+                  label="comment"
+                  name="comment"
+                  type="text-area"
+                  placeholder="comment"
+                />
 
-              <Button
-                size="lg"
-                type="submit"
-                variant="outline-light"
-                className="my-3"
-              >
-                Submit
-              </Button>
-            </Col>
-          </Row>
-        </Form>
-      </Formik>
+                <Button
+                  size="lg"
+                  type="submit"
+                  variant="outline-light"
+                  className="my-3"
+                >
+                  Submit
+                </Button>
+              </Col>
+            </Row>
+          </Form>
+        </Formik>
 
-      <SuccessModal
-        firstName={firstName}
-        show={showModal}
-        onHide={handleCloseModal}
-      />
+        <SuccessModal
+          firstName={firstName}
+          show={showModal}
+          onHide={handleCloseModal}
+        />
+      </Container>
     </Container>
   );
 };
