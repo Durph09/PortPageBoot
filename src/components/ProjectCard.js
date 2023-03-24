@@ -1,9 +1,5 @@
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
-import  Col from 'react-bootstrap/Col';
- 
-
-
 
 const ProjectCard = ({src, title, pageLink, codeLink, description}) => {
 
@@ -15,8 +11,8 @@ const ProjectCard = ({src, title, pageLink, codeLink, description}) => {
         <Card.Text>
           {description}
         </Card.Text>
-        <Card.Link href={pageLink}>See the page ➜ </Card.Link>
-        <Card.Link href={codeLink}>See the Code ➜</Card.Link>
+        <Card.Link href={pageLink} target="_blank">See the page ➜ </Card.Link>
+        <Card.Link href={codeLink} target="_blank">See the Code ➜</Card.Link>
       </Card.Body>
     </Card>
 
