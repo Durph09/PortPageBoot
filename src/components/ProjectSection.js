@@ -5,7 +5,8 @@ import ProjectCard from "./ProjectCard";
 import portfolioProj from "./images/portfolioProj.png";
 import TopFormTeaHome from "./images/TopFormTeaHome.png";
 import Row from "react-bootstrap/Row";
-import { Slide } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
+import { useMediaQuery } from "@mui/material";
 
 const projects = [
   {
@@ -26,7 +27,10 @@ const projects = [
   },
 ];
 
+
+
 const ProjectSection = () => {
+  const isSmallScreen = useMediaQuery('(max-width: 600px)');
   return (
     <Container
       fluid
@@ -42,16 +46,28 @@ const ProjectSection = () => {
         <Row className="gap-2 d-flex justify-content-evenly">
           {projects.map((project, index) => (
             <Col xs={10} md={5} key={project.title} className="my-2">
-              <Slide direction={index % 2 === 0 ? "right" : "left"}>
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  src={project.src}
-                  pageLink={project.pageLink}
-                  codeLink={project.codeLink}
-                />
-              </Slide>
-            </Col>
+      {isSmallScreen ? (
+        
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            src={project.src}
+            pageLink={project.pageLink}
+            codeLink={project.codeLink}
+          />
+        
+      ) : (
+        <Slide direction={index % 2 === 0 ? 'right' : 'left'}>
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            src={project.src}
+            pageLink={project.pageLink}
+            codeLink={project.codeLink}
+          />
+        </Slide>
+      )}
+    </Col>
           ))}
         </Row>
       </Container>
