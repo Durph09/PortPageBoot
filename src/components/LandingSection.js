@@ -3,7 +3,8 @@ import Image from "react-bootstrap/Image";
 import thumbnail from "./images/thumbPic.jpg";
 import Col from "react-bootstrap/Col";
 import { Fade, Slide, Roll, JackInTheBox } from "react-awesome-reveal";
-import Row from "react-bootstrap/Row"
+
+
 
 const LandingSection = () => {
   return (
@@ -15,6 +16,7 @@ const LandingSection = () => {
     <Container>
       <Col>
         
+        <JackInTheBox>
           <Image
             roundedCircle
             fluid
@@ -22,6 +24,7 @@ const LandingSection = () => {
             style={{ maxWidth: "200px" }}
             alt="pic of Conor Mahaney"
           />
+          </JackInTheBox>
         
         
           <h4> Hello, I'm Conor</h4>

@@ -5,6 +5,7 @@ import ProjectCard from "./ProjectCard";
 import portfolioProj from "./images/portfolioProj.png";
 import TopFormTeaHome from "./images/TopFormTeaHome.png";
 import Row from "react-bootstrap/Row";
+import { Slide } from "react-awesome-reveal";
 
 const projects = [
   {
@@ -17,7 +18,8 @@ const projects = [
   },
   {
     title: "Portfolio Page",
-    description: "Built using React, React-Bootstrap, Formik, Yup, and several other libraries",
+    description:
+      "Built using React, React-Bootstrap, Formik, Yup, and several other libraries",
     src: portfolioProj,
     codeLink: "https://github.com/Durph09/TopFormTea1",
     pageLink: "https://durph09.github.io/TopFormTea1/",
@@ -30,26 +32,29 @@ const ProjectSection = () => {
       fluid
       className=" 
       vh-100 
-      bg-gradient 
-      text-light bg-success
+      text-light 
       "
+      style={{ backgroundColor: "#14532d" }}
     >
-    <Container>
-      <h1 id="projects-section">Featured Projects</h1>
+      <Container>
+        <h1 id="projects-section">Featured Projects</h1>
 
-      <Row className="gap-2 d-flex justify-content-evenly">
-        {projects.map((project) => (
-          <Col xs={10} md={5} key={project.title} className="my-2">
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              src={project.src}
-              pageLink={project.pageLink}
-              codeLink={project.codeLink}
-            />
-          </Col>
-        ))}
-      </Row></Container>
+        <Row className="gap-2 d-flex justify-content-evenly">
+          {projects.map((project, index) => (
+            <Col xs={10} md={5} key={project.title} className="my-2">
+              <Slide direction={index % 2 === 0 ? "right" : "left"}>
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  src={project.src}
+                  pageLink={project.pageLink}
+                  codeLink={project.codeLink}
+                />
+              </Slide>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </Container>
   );
 };
