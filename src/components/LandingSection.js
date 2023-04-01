@@ -3,6 +3,7 @@ import Image from "react-bootstrap/Image";
 import thumbnail from "./images/thumbPic.jpg";
 import Col from "react-bootstrap/Col";
 import { Fade, Slide, Roll, JackInTheBox } from "react-awesome-reveal";
+import Tech from "./Tech";
 
 
 
@@ -10,8 +11,8 @@ const LandingSection = () => {
   return (
     <Container
       fluid
-      className="vh-100  bg-gradient d-flex justify-content-center align-items-center text-light text-center p-0 m-0"
-      style={{ backgroundColor: "rgb(42,67,101)" }}
+      className="vh-100   d-flex justify-content-center align-items-center text-warning text-center p-0 m-0"
+      
     >
     <Container>
       <Col>
@@ -35,6 +36,7 @@ const LandingSection = () => {
             A frontend developer specialesed in React
           </Fade>
         </h1>
+        <Tech />
       </Col></Container>
     </Container>
   );

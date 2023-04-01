@@ -64,8 +64,8 @@ export default function NavBar() {
     <Navbar
       collapseOnSelect
       expand="md"
-      bg="dark"
-      variant="dark"
+      bg="warning"
+      variant="light"
       ref={headerRef}
       style={{
         position: "fixed",

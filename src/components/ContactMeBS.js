@@ -9,6 +9,8 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import SuccessModal from "./SuccessModal";
 import { useState } from "react";
+import StarsBg from "./StarsBg";
+import {Fade, Slide} from "react-awesome-reveal";
 
 const ContactMeBS = () => {
   const [firstName, setFirstName] = useState("");
@@ -54,11 +56,16 @@ const ContactMeBS = () => {
   return (
     <Container
       fluid
-      className="vh-100 text-light text-start m-0 p-0 "
-      style={{ backgroundColor: "#512da8" }}
-    >
-      <Container>
-        <h1 id="contact-section">Contact me</h1>
+      className="vh-100 text-light text-warning m-0 p-0 "
+      
+    ><StarsBg/>
+      <Container className="text-warning">
+      
+       <h1 className="py-4">
+      <Fade delay={1e3} cascade damping={0.3e-1}>
+             Lets Build Something
+          </Fade>
+      </h1>
         <Formik
           validationSchema={schema}
           onSubmit={(values) => {
@@ -73,6 +80,7 @@ const ContactMeBS = () => {
             comment: "",
           }}
         >
+        <Slide>
           <Form ref={form}>
             <Row className="gap-2 d-flex justify-content-evenly">
               <Col md={6} xs={11}>
@@ -114,7 +122,7 @@ const ContactMeBS = () => {
                 </Button>
               </Col>
             </Row>
-          </Form>
+          </Form></Slide>
         </Formik>
 
         <SuccessModal

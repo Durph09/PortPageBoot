@@ -3,7 +3,7 @@ import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
 import ProjectCard from "./ProjectCard";
 import portfolioProj from "./images/portfolioProj.png";
-import TopFormTeaHome from "./images/TopFormTeaHome.png";
+
 import Row from "react-bootstrap/Row";
 import { Fade, Slide } from "react-awesome-reveal";
 import { useMediaQuery } from "@mui/material";
@@ -12,8 +12,8 @@ const projects = [
   {
     title: "Top Form Tea Ecommerce",
     description:
-      "An ecommerce site built in React, React-Bootstrap, and several other libraries",
-    src: TopFormTeaHome,
+      "An ecommerce site built in React and React-Bootstrap",
+    src: "",
     codeLink: "https://github.com/Durph09/TopFormTea1",
     pageLink: "https://durph09.github.io/TopFormTea1/",
   },
@@ -36,13 +36,17 @@ const ProjectSection = () => {
       fluid
       className=" 
       vh-100 
-      text-light 
+      text-light
       "
-      style={{ backgroundColor: "#14532d" }}
+      
     >
       <Container>
-        <h1 id="projects-section">Featured Projects</h1>
-
+        <h1>
+        <Fade delay={1e3} cascade damping={0.3e-1}>
+        . . . Featured Projects
+            
+          </Fade>
+</h1>
         <Row className="gap-2 d-flex justify-content-evenly">
           {projects.map((project, index) => (
             <Col xs={10} md={5} key={project.title} className="my-2">
