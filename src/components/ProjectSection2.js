@@ -13,7 +13,7 @@ import Card from "react-bootstrap/Card"
 const ProjectSection2 = () => {
  
   return (
-    <div className=" vh-100 text-warning" style={{overflow:"hidden"}}>
+    <div  id="projects" className=" vh-100 text-warning" style={{overflow:"hidden"}}>
     <StarsBg/>
     <h1>Featured Projects</h1>
     

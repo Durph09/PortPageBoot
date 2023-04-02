@@ -17,7 +17,7 @@ const socials = [
   },
   {
     icon: faLinkedin,
-    url: "www.linkedin.com/in/conor-mahaney-3a74b4204",
+    url: "https://www.linkedin.com/in/conor-mahaney-3a74b4204",
   },
 ];
 
@@ -76,6 +76,7 @@ export default function NavBar() {
         transitionProperty: "transform",
         transitionDuration: ".3s",
         transitionTimingFunction: "ease-in-out",
+        zIndex: 1000
       }}
     >
       <Container>
