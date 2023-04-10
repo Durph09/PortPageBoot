@@ -1,6 +1,5 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Stars, Html } from "@react-three/drei";
-
 import { useMouse } from "react-use";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,32 +9,37 @@ import {
   faBootstrap,
   faPython,
   faJs,
+  faPhp,
 } from "@fortawesome/free-brands-svg-icons";
-import { useEffect, useRef } from "react";
-
-
+import { useEffect, useRef, useState } from "react";
 
 const icons = [
-  { icon: faReact},
+  { icon: faReact },
   { icon: faGithub },
   { icon: faNodeJs },
   { icon: faBootstrap },
   { icon: faPython },
   { icon: faJs },
+  { icon: faPhp },
 ];
-
 
 const IconSphere = () => {
   const groupRef = useRef();
   const { docX, docY } = useMouse(document);
+  const [sphereRadius, setSphereRadius] = useState(20);
 
   useEffect(() => {
     groupRef.current.rotation.y = (docX / window.innerWidth) * Math.PI * 2;
     groupRef.current.rotation.x = (docY / window.innerHeight) * Math.PI * 2;
   }, [docX, docY]);
 
+  useFrame(({ clock }) => {
+    const scrollSpeed = 0.1;
+    const newRadius = sphereRadius + scrollSpeed;
+    setSphereRadius(newRadius);
+  });
+
   const iconRadius = 3;
-  const sphereRadius = 10;
 
   const calculateIconPosition = (index, total) => {
     const phi = Math.acos(-1 + (2 * index) / total);
@@ -49,7 +53,7 @@ const IconSphere = () => {
   };
 
   return (
-    <group ref={groupRef}>
+    <group ref={groupRef} position={[0, 0, -100]}>
       {icons.map((item, index) => {
         const { x, y, z } = calculateIconPosition(index, icons.length);
         return (
@@ -66,16 +70,26 @@ const IconSphere = () => {
   );
 };
 
+const CustomOrbitControls = () => {
+  const { camera } = useThree();
+
+  // Set the initial camera position (zoom level)
+  useEffect(() => {
+    camera.position.set(0, 0, 300); // 5units away from the target along the Z-axis
+  }, [camera]);
+
+  return <OrbitControls camera={camera} autoRotate />;
+};
+
 const Tech = () => {
   return (
-    <div    className="bg-dark" style={{ width: "100%", height: "100%" }} >
-    
+    <div className="bg-dark" style={{ width: "100%", height: "100%" }}>
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <IconSphere />
-        <Stars />
-        <OrbitControls />
+        <Stars depth={50} radius={10} />
+        <CustomOrbitControls />
       </Canvas>
     </div>
   );
