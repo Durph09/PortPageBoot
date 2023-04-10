@@ -9,8 +9,7 @@ import ProjectSection2 from "./components/ProjectSection2";
 
 function App() {
   return (
-    <div 
-  >
+    <div>
       <nav>
         <NavBar />
         <LandingSection2 />

@@ -26,19 +26,24 @@ const ContactMeBS = () => {
 
   const form = useRef();
 
-  const sendEmail = (e) => {
-    emailjs
-      .sendForm(
+  const sendEmail = (e, values) => {
+    e.preventDefault();
+    
+    
+    emailjs.sendForm(
         "service_b4h53ed",
         "template_kt1awy3",
-        form.current,
+        e.target,
         "3hZ35UFoggevD4GCU"
       )
       .then(
         (result) => {
+          
           console.log(result.text);
-          form.current.reset();
-          handleShowModal();
+          console.log(firstName);
+          
+          handleShowModal(firstName);
+          e.target.reset();
         },
         (error) => {
           console.log(error.text);
@@ -60,12 +65,14 @@ const ContactMeBS = () => {
       className="vh-100 text-light text-warning m-0 p-0 "
     >
       <StarsBg />
+      
       <Container className="text-warning">
         <h1 className="py-4">
           <Fade delay={1e3} cascade damping={0.3e-1}>
             Lets Build Something
           </Fade>
         </h1>
+        
         <Formik
           validationSchema={schema}
           onSubmit={(values) => {
@@ -81,7 +88,7 @@ const ContactMeBS = () => {
           }}
         >
           <Slide>
-            <Form ref={form}>
+            <Form ref={form} onSubmit={sendEmail} id="form" name="form">
               <Row className="gap-2 d-flex justify-content-evenly">
                 <Col md={6} xs={11}>
                   <TextInputBS
@@ -89,6 +96,7 @@ const ContactMeBS = () => {
                     name="firstName"
                     type="text"
                     placeholder="Name"
+                   
                   />
 
                   <TextInputBS

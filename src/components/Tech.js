@@ -23,9 +23,11 @@ const icons = [
   { icon: faPhp },
 ];
 
+
 const IconSphere = () => {
+  const ref= useRef(null)
   const groupRef = useRef();
-  const { docX, docY } = useMouse(document);
+  const { docX, docY } = useMouse(ref);
   const [sphereRadius, setSphereRadius] = useState(20);
 
   useEffect(() => {
