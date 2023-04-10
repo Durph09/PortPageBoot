@@ -26,11 +26,11 @@ function Column3Toast({headline1, headline2, headline3, bText1, bText2, bText3})
         <Toast show={showSummary} onClose={toggleShowSummary}>
           <Toast.Header>
             <img
-              src={headline1}
+              src={devlogo}
               className="rounded me-2 toastImage"
               alt=""
             />
-            <strong className="me-auto">Top Form Tea</strong>
+            <strong className="me-auto">{headline1}</strong>
             
           </Toast.Header>
           <Toast.Body className="text-dark">{bText1}
