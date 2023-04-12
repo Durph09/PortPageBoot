@@ -75,7 +75,7 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
         className="childBox"
         ref={childBoxRef1}
         as="a"
-        onClick={() => window.open({pageLink}, "_blank")}
+        onClick={() => window.open(pageLink, "_blank")}
       >
         <img src={src1} alt={alt1} className="image focus-ring" />
       </div>
@@ -83,7 +83,7 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
         className="childBox"
         ref={childBoxRef2}
         as="Button"
-        onClick={() => window.open({pageLink}, "_blank")}
+        onClick={() => window.open(pageLink, "_blank")}
       >
         <img src={src2} alt={alt2} className="image" />
       </div>
@@ -91,7 +91,7 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
         className="childBox"
         ref={childBoxRef3}
         as="Button"
-        onClick={() => window.open({pageLink}, "_blank")}>
+        onClick={() => window.open(pageLink, "_blank")}>
             <img src={src3} alt="alt3" className="image" />
         </div>
 
