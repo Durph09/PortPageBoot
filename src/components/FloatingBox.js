@@ -55,7 +55,10 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
         childBox1.style.transform = `translate(${x1}px, ${y1}px)`;
         childBox2.style.transform = `translate(${x2}px, ${y2}px)`;
         childBox3.style.transform = `translate(${x3}px, ${y3}px)`;
-      }
+         
+        
+      
+  }
 
       requestAnimationFrame(move);
     };
@@ -66,7 +69,7 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
   return (
     
     <div
-      className="parentBox border-top border-bottom border-warning"
+      className="parentBox  border-bottom border-warning"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
