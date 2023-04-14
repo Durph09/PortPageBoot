@@ -41,8 +41,7 @@ import PortProjects from "../images/PortProjects.png"
         dx: -2,
         dy: -2,
         images: [PortLanding, PortContact, PortProjects],
-        text: "Portfolio project description...",
-        text: "Top Form Tea is a fully functional e-commerce site built from scratch. Primarily developed with React, it features a custom-built cart with all state managed client-side.", 
+        text: 'This portolio page is a place where I experiment with new tech and libraries. The site is hosted on Firebase and constructed primarily with React and many other libraries / Frameworks.', 
         codeLink: 'https://github.com/Durph09/PortPageBoot',
         siteLink: 'https://conormahaney.com/',
 
