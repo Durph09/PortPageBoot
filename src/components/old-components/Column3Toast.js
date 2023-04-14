@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import devlogo from "./images/devlogo copy.png";
+import devlogo from "../images/devlogo copy.png";
 import "./Column3Toast.css";
-import StarsBg from "./StarsBg";
+import StarsBg from "../StarsBg";
 
 function Column3Toast({headline1, headline2, headline3, bText1, bText2, bText3}) {
   const [showSummary, setSummary] = useState(false);

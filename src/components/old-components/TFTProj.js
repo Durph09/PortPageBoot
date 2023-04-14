@@ -1,8 +1,8 @@
 import Column3Toast from "./Column3Toast";
 import FloatingBox from "./FloatingBox";
-import tftdarkpage from "./images/tftdarkpage.png";
-import TFTHome from "./images/TFTHome.png";
-import TFTFAQ from "./images/TFTFAQ.png";
+import tftdarkpage from "../images/tftdarkpage.png";
+import TFTHome from "../images/TFTHome.png";
+import TFTFAQ from "../images/TFTFAQ.png";
 
 const TFTProj = () => {
   return (

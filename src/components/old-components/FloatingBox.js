@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./FloatingBox.css";
+import StarsBg from "../StarsBg";
 
-
-const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
+const FloatingBox = ({ src1, src2, src3, alt1, alt2, alt3, pageLink }) => {
   const childBoxRef1 = useRef();
   const childBoxRef2 = useRef();
   const childBoxRef3 = useRef();
@@ -55,10 +55,7 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
         childBox1.style.transform = `translate(${x1}px, ${y1}px)`;
         childBox2.style.transform = `translate(${x2}px, ${y2}px)`;
         childBox3.style.transform = `translate(${x3}px, ${y3}px)`;
-         
-        
-      
-  }
+      }
 
       requestAnimationFrame(move);
     };
@@ -67,14 +64,13 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
   }, []);
 
   return (
-    
     <div
       className="parentBox  border-bottom border-warning"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-    
-      <div 
+    <StarsBg />
+      <div
         className="childBox"
         ref={childBoxRef1}
         as="a"
@@ -94,15 +90,12 @@ const FloatingBox = ( {src1, src2, src3, alt1, alt2, alt3, pageLink}) => {
         className="childBox"
         ref={childBoxRef3}
         as="Button"
-        onClick={() => window.open(pageLink, "_blank")}>
-            <img src={src3} alt="alt3" className="image" />
-        </div>
+        onClick={() => window.open(pageLink, "_blank")}
+      >
+        <img src={src3} alt="alt3" className="image" />
+      </div>
+    </div>
+  );
+};
 
-        </div>
-       
-
-  )
-}
-
-export default FloatingBox ;
-        
+export default FloatingBox;

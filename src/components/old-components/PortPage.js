@@ -21,19 +21,28 @@ const PortPage = () => {
         headline1="Portfolio Page"
         bText1={
           <>
-            This portolio page is a place where I experiment with new tech and libraries. The site is
-            hosted on Firebase and constructed primarily with React and many other react libraries. 
-            
+            This portolio page is a place where I experiment with new tech and
+            libraries. The site is hosted on Firebase and constructed primarily
+            with React and many other react libraries.
             <ul>
-              <li> <a href="https://github.com/Durph09/PortPageBoot">See the code on GitHub ➜</a> </li>
-              <li> <a href="https://ConorMahaney.Com/">Visit the hosted Site ➜</a></li>
+              <li>
+                {" "}
+                <a href="https://github.com/Durph09/PortPageBoot">
+                  See the code on GitHub ➜
+                </a>{" "}
+              </li>
+              <li>
+                {" "}
+                <a href="https://ConorMahaney.Com/">Visit the hosted Site ➜</a>
+              </li>
             </ul>
           </>
         }
         headline2="Tech"
         bText2={
           <>
-            The technologies / Frameworks / Libraries used in creating Top Form Tea include:
+            The technologies / Frameworks / Libraries used in creating Top Form
+            Tea include:
             <ul>
               <li>JS HTML5 CSS3</li>
               <li>React</li>
@@ -47,8 +56,16 @@ const PortPage = () => {
               <li>Yup</li>
               <li>React Three Fiber</li>
               <li>Drei</li>
-              <li> <a href="https://github.com/Durph09/PortPageBoot">See the code on GitHub ➜</a> </li>
-              <li> <a href="https://ConorMahaney.Com/">Visit the hosted Site ➜</a></li>
+              <li>
+                {" "}
+                <a href="https://github.com/Durph09/PortPageBoot">
+                  See the code on GitHub ➜
+                </a>{" "}
+              </li>
+              <li>
+                {" "}
+                <a href="https://ConorMahaney.Com/">Visit the hosted Site ➜</a>
+              </li>
             </ul>
           </>
         }
@@ -61,9 +78,17 @@ const PortPage = () => {
               <li>Mobile responsive design</li>
               <li>Custom animations</li>
               <li>Modular design</li>
-              
-              <li> <a href="https://github.com/Durph09/PortPageBoot">See the code on GitHub ➜</a> </li>
-              <li> <a href="https://ConorMahaney.Com/">Visit the hosted Site ➜</a></li>
+
+              <li>
+                {" "}
+                <a href="https://github.com/Durph09/PortPageBoot">
+                  See the code on GitHub ➜
+                </a>{" "}
+              </li>
+              <li>
+                {" "}
+                <a href="https://ConorMahaney.Com/">Visit the hosted Site ➜</a>
+              </li>
             </ul>
           </>
         }

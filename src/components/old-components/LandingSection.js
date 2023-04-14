@@ -3,7 +3,7 @@ import Image from "react-bootstrap/Image";
 import thumbnail from "./images/thumbPic.jpg";
 import Col from "react-bootstrap/Col";
 import { Fade, Slide, Roll, JackInTheBox } from "react-awesome-reveal";
-import Tech from "./Tech";
+import Tech from "../Tech";
 
 
 
