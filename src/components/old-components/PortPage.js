@@ -23,7 +23,7 @@ const PortPage = () => {
           <>
             This portolio page is a place where I experiment with new tech and
             libraries. The site is hosted on Firebase and constructed primarily
-            with React and many other react libraries.
+            with React and many other libraries / Frameworks.
             <ul>
               <li>
                 {" "}

@@ -6,7 +6,10 @@ import TFTCart from "../images/TFTCart.png"
 import PortLanding from "../images/PortLanding.png";
 import PortContact from "../images/PortContact.png";
 import FloatBox2 from "./FloatBox2";
-import PortProjects from "../images/PortProjects.png"
+import PortProjects from "../images/PortProjects.png";
+import bayPinesFoundationHome from "../images/bayPinesFoundationHome.png";
+import bayPinesFoundation2 from "../images/bayPinesFoundation2.png";
+import bayPinesFoundation3 from "../images/bayPinesFoundation3.png";
 
 
 
@@ -45,6 +48,21 @@ import PortProjects from "../images/PortProjects.png"
         codeLink: 'https://github.com/Durph09/PortPageBoot',
         siteLink: 'https://conormahaney.com/',
 
+      },
+      {
+        id: "bayPinesFoundaiton",
+        src: bayPinesFoundationHome,
+        alt: "Bay Pines Foundation Homepage",
+        selected: () => window.open("https://example.com", "_blank"),
+        ref: useRef(),
+        x: Math.floor(Math.random() * 100),
+        y: Math.floor(Math.random() * 100),
+        dx: -3,
+        dy: 1,
+        images: [bayPinesFoundationHome, bayPinesFoundation2, bayPinesFoundation3],
+        text: "Bay Pines Foundation is a react SPA with a custom wordpress headless cms using WP RESTful API. Authenication is handled by firebase.", 
+        codeLink: 'https://github.com/Durph09/bay-pines-foundation',
+        siteLink: 'https://bay-pines-foundation.web.app/',
       },
     ];
     

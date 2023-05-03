@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import "./FloatBox2.css";
 import StarsBg from "../StarsBg";
 import Modal from "react-bootstrap/Modal";
-import Carousel from "react-bootstrap/Carousel"
+import Carousel from "react-bootstrap/Carousel";
 
 const FloatBox2 = ({ projects }) => {
   const [isPaused, setIsPaused] = useState(false);
   const isPausedRef = useRef(isPaused);
   const parentBoxRef = useRef();
   const [showModal, setShowModal] = useState(false);
-  const [selectedProject, setSelectedProdject]= useState(null);
+  const [selectedProject, setSelectedProdject] = useState(null);
 
   useEffect(() => {
     isPausedRef.current = isPaused;
@@ -17,30 +17,34 @@ const FloatBox2 = ({ projects }) => {
 
   useEffect(() => {
     const parentBox = parentBoxRef.current;
+    const transitionDelay = 20; // Adjust this value to control the delay
 
     const move = () => {
-      if (!isPausedRef.current) {
-        projects.forEach((project, index) => {
-          const childBox = project.ref.current;
+      setTimeout(() => {
+        if (!isPausedRef.current) {
+          projects.forEach((project, index) => {
+            const childBox = project.ref.current;
 
-          const maxMoveX = parentBox.clientWidth - childBox.clientWidth;
-          const maxMoveY = parentBox.clientHeight - childBox.clientHeight;
+            const maxMoveX = parentBox.clientWidth - childBox.clientWidth;
+            const maxMoveY = parentBox.clientHeight - childBox.clientHeight;
 
-          project.x += project.dx;
-          project.y += project.dy;
+            project.x += project.dx;
+            project.y += project.dy;
 
-          if (project.x < 0 || project.x > maxMoveX) project.dx = -project.dx;
-          if (project.y < 0 || project.y > maxMoveY) project.dy = -project.dy;
+            if (project.x < 0 || project.x > maxMoveX) project.dx = -project.dx;
+            if (project.y < 0 || project.y > maxMoveY) project.dy = -project.dy;
 
-          childBox.style.transform = `translate(${project.x}px, ${project.y}px)`;
-        });
-      }
+            childBox.style.transform = `translate(${project.x}px, ${project.y}px)`;
+          });
+        }
 
-      requestAnimationFrame(move);
+        requestAnimationFrame(move);
+      }, transitionDelay);
     };
 
     move();
   }, [projects]);
+
 
   return (
     <div
