@@ -1,4 +1,4 @@
-import StarsBg from "../StarsBg";
+import StarsBg from "../../StarsBg";
 import FloatBox2 from "./FloatBox2";
 import ProjectList from "./ProjectsList";
 

@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import "./FloatBox2.css";
-import StarsBg from "../StarsBg";
+import StarsBg from "../../StarsBg";
 import Modal from "react-bootstrap/Modal";
 import Carousel from "react-bootstrap/Carousel";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 
 const FloatBox2 = ({ projects }) => {
   const [isPaused, setIsPaused] = useState(false);
@@ -17,7 +20,7 @@ const FloatBox2 = ({ projects }) => {
 
   useEffect(() => {
     const parentBox = parentBoxRef.current;
-    const transitionDelay = 20; // Adjust this value to control the delay
+    const transitionDelay = 30; // Adjust this value to control the delay
 
     const move = () => {
       setTimeout(() => {
@@ -65,8 +68,17 @@ const FloatBox2 = ({ projects }) => {
             setShowModal(true);
           }}
         >
-          <img src={project.src} alt={project.alt} className="image" />
+        <OverlayTrigger
+  trigger={['hover', 'focus']}
+  overlay={(props) => (
+    <Tooltip id={`tooltip-${project.id}`} {...props}>
+      <strong>{project.id}</strong>
+    </Tooltip>
+  )}
+>
+          <img src={project.src} alt={project.alt} className="image" /></OverlayTrigger>
         </div>
+        
       ))}
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>

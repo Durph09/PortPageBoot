@@ -1,15 +1,15 @@
 
 import { useRef } from "react";
-import TFTHome from "../images/TFTHome.png";
-import TFTFAQ from "../images/TFTFAQ.png";
-import TFTCart from "../images/TFTCart.png"
-import PortLanding from "../images/PortLanding.png";
-import PortContact from "../images/PortContact.png";
+import TFTHome from "../../images/TFTHome.png";
+import TFTFAQ from "../../images/TFTFAQ.png";
+import TFTCart from "../../images/TFTCart.png"
+import PortLanding from "../../images/PortLanding.png";
+import PortContact from "../../images/PortContact.png";
 import FloatBox2 from "./FloatBox2";
-import PortProjects from "../images/PortProjects.png";
-import bayPinesFoundationHome from "../images/bayPinesFoundationHome.png";
-import bayPinesFoundation2 from "../images/bayPinesFoundation2.png";
-import bayPinesFoundation3 from "../images/bayPinesFoundation3.png";
+import PortProjects from "../../images/PortProjects.png";
+import bayPinesFoundationHome from "../../images/bayPinesFoundationHome.png";
+import bayPinesFoundation2 from "../../images/bayPinesFoundation2.png";
+import bayPinesFoundation3 from "../../images/bayPinesFoundation3.png";
 
 
 
@@ -18,7 +18,7 @@ import bayPinesFoundation3 from "../images/bayPinesFoundation3.png";
     
     const projects = [
       {
-        id: "TFT",
+        id: "Top Form Tea ecom",
         src: TFTFAQ,
         alt: "Top Form Tea",
         selected: () => window.open("https://example.com", "_blank"),
@@ -34,7 +34,7 @@ import bayPinesFoundation3 from "../images/bayPinesFoundation3.png";
       },
     
       {
-        id: "Port",
+        id: "My portfolio page",
         src: PortLanding,
         alt: "Portfolio Landing Page",
         selected: () => window.open("https://example.com", "_blank"),
@@ -50,7 +50,7 @@ import bayPinesFoundation3 from "../images/bayPinesFoundation3.png";
 
       },
       {
-        id: "bayPinesFoundaiton",
+        id: "Bay Pines Foundaiton",
         src: bayPinesFoundationHome,
         alt: "Bay Pines Foundation Homepage",
         selected: () => window.open("https://example.com", "_blank"),

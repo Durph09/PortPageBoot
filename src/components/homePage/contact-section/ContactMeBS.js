@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import SuccessModal from "./SuccessModal";
 import { useState } from "react";
-import StarsBg from "../StarsBg";
+import StarsBg from "../../StarsBg";
 import { Fade, Slide } from "react-awesome-reveal";
 
 const ContactMeBS = () => {

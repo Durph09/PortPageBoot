@@ -85,7 +85,7 @@ const CustomOrbitControls = () => {
 
 const Tech = () => {
   return (
-    <div className="bg-dark" style={{ width: "100%", height: "100%" }}>
+    <div className="" style={{ width: "100vw", height: "100vh", zIndex: 1000, position: "absolute" }}>
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
