@@ -1,0 +1,12 @@
+
+
+.serviceCard{
+    transition: transform 0.7s;
+}
+
+.serviceCard:hover {
+    outline: 4px solid #ffc107;
+    outline-offset: 4px; 
+    transform: scale(1.1);
+  
+  }

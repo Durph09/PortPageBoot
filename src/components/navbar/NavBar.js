@@ -22,63 +22,10 @@ const socials = [
 ];
 
 export default function NavBar() {
-  const headerRef = useRef(null);
-
-  useEffect(() => {
-    let prevScrollPos = window.scrollY;
-
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const headerElement = headerRef.current;
-      if (!headerElement) {
-        return;
-      }
-      if (prevScrollPos > currentScrollPos) {
-        headerElement.style.transform = "translateY(0)";
-      } else {
-        headerElement.style.transform = "translateY(-200px)";
-      }
-      prevScrollPos = currentScrollPos;
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}-section`;
-    const element = document.getElementById(id);
-    if (element) {
-      const navbarHeight = headerRef.current.clientHeight;
-      const elementPosition = element.offsetTop - navbarHeight;
-      element.scrollIntoView({
-        behavior: "smooth",
-        top: elementPosition,
-        block: "start",
-      });
-    }
-  };
+ 
   return (
-    <Navbar
-      collapseOnSelect
-      expand="md"
-      bg="warning"
-      variant="light"
-      ref={headerRef}
-      style={{
-        position: "fixed",
-        top: "0 ",
-        left: "0",
-        right: "0",
-        transform: "translateY(0)",
-        transitionProperty: "transform",
-        transitionDuration: ".3s",
-        transitionTimingFunction: "ease-in-out",
-        zIndex: 1000
-      }}
-    >
+    <Container >
+    <Navbar bg="warning"className="rounded-pill p-2">
       <Container>
         {socials.map(({ icon, url }) => (
           <Navbar.Brand
@@ -88,21 +35,12 @@ export default function NavBar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={icon} size="2x" key={url} />
+            <FontAwesomeIcon icon={icon} size="3x" key={url} inverse border/>
           </Navbar.Brand>
         ))}
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#projects" onClick={handleClick("projects")}>
-              Projects
-            </Nav.Link>
-            <Nav.Link href="#contact" onClick={handleClick("contact")}>
-              Contact Me
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+       
       </Container>
     </Navbar>
+    </Container>
   );
 }
