@@ -34,7 +34,7 @@ const ContactMeBS = () => {
         "service_b4h53ed",
         "template_kt1awy3",
         e.target,
-        "3hZ35UFoggevD4GCU"
+        process.env.EMAILJS_API_KEY
       )
       .then(
         (result) => {
@@ -62,7 +62,7 @@ const ContactMeBS = () => {
     <Container
       id="contact"
       fluid
-      className="h-50 text-light text-warning m-0 p-0 "
+      className="h-100 text-light text-warning m-0 p-0 "
     >
       <StarsBg />
       

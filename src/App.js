@@ -20,6 +20,9 @@ import CoolStuff from "./components/AltLandingPage/CoolStuff/CoolStuff";
 
 
 const App = () => {
+
+  const dotenv = require('dotenv');
+dotenv.config();
  
   const [key, setKey] = useState('first');
   
