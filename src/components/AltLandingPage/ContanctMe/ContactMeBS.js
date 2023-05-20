@@ -34,7 +34,7 @@ const ContactMeBS = () => {
         "service_b4h53ed",
         "template_kt1awy3",
         e.target,
-        process.env.EMAILJS_API_KEY
+        process.env.REACT_APP_EMAILJS_API_KEY
       )
       .then(
         (result) => {
