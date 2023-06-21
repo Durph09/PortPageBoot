@@ -10,6 +10,11 @@ import bayPinesFoundationHome from "../../images/bayPinesFoundationHome.png";
 import bayPinesFoundation2 from "../../images/bayPinesFoundation2.png";
 import bayPinesFoundation3 from "../../images/bayPinesFoundation3.png";
 
+import blogStandard from "../../images/blogStandard.png";
+import blogStandardBlog from "../../images/blogStandardBlog.png";
+import blogStandardGenerate from "../../images/blogStandardGenerate.png";
+import blogStandardHome from "../../images/blogStandardHome.png";
+
 
 
 
@@ -62,6 +67,22 @@ import bayPinesFoundation3 from "../../images/bayPinesFoundation3.png";
         text: "Bay Pines Foundation is a react SPA with a custom wordpress headless cms using WP RESTful API. Authenication is handled by firebase.", 
         codeLink: 'https://github.com/Durph09/bay-pines-foundation',
         siteLink: 'https://bay-pines-foundation.web.app/',
+      },
+
+      {
+        id: "ChatGPT blog generator",
+        src: blogStandardHome,
+        alt: "blog Standard Homepage",
+        selected: () => window.open("https://example.com", "_blank"),
+        
+        x: Math.floor(Math.random() * 100),
+        y: Math.floor(Math.random() * 100),
+        dx: -1,
+        dy: 1,
+        images: [blogStandardHome, blogStandardBlog, blogStandardGenerate],
+        text: "ChatGPT Blog Generator is a bespoke project crafted with Next.js at its core, and it's comfortably deployed on the DigitalOcean platform. This robust system elegantly integrates services like Auth0, MongoDB, and Stripe, each handling its dedicated functions seamlessly. The unique feature of this project is its token-based operation, where users can purchase tokens to redeem AI-generated blog posts, courtesy of ChatGPT. These posts not only provide value for the token but also showcase the advanced capabilities of AI in content creation. Currently, Strip is still in test mode so feel free to purchase tokens with a fake credit card number.", 
+        codeLink: 'https://github.com/Durph09/blog-creator',
+        siteLink: 'https://oyster-app-vnhsv.ondigitalocean.app/',
       },
     ];
     
