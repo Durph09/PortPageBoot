@@ -12,10 +12,9 @@ import AboutMe from "./components/AltLandingPage/aboutMePage/AboutMe";
 import StarsBg from "./components/AltLandingPage/Shared/StarsBg";
 import "./components/AltLandingPage/Shared/LandingFrame.css";
 import Services from "./components/AltLandingPage/Services/Services";
-
 import FloatingProjects from "./components/AltLandingPage/Portfolio/FloatingProjects";
 import Tech from "./components/AltLandingPage/Shared/Tech";
-import Footer from "./components/AltLandingPage/Footer/Footer.js";
+import "./App.css";
 import CoolStuff from "./components/AltLandingPage/CoolStuff/CoolStuff";
 
 
