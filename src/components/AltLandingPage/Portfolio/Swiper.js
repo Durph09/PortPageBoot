@@ -20,14 +20,10 @@ const FloatingProjects = (ProjectList) => {
       id="projects"
       className=" d-flex-col vh-100 vw-100 swiperMain position-relative overflow-hidden align-items-center justify-content-evenly"
     >
-      <h1 className="text-warning mb-4 py-3 mx-1">
-        <Fade delay={1e3} cascade damping={0.3e-1}>
-          Portfolio Projects
-        </Fade>
-      </h1>
+      <h1 className="text-warning mb-4 py-3 mx-1">Portfolio Projects</h1>
 
       <swiper-container
-        class="mySwiper"
+        class="mySwiper w-100"
         pagination="true"
         grab-cursor="true"
         centered-slides="true"
@@ -78,7 +74,7 @@ const FloatingProjects = (ProjectList) => {
                   rel="noopener noreferrer"
                 >
                   See the site➜
-                </a>{" "}
+                </a>
                 <br />
                 <a
                   href={selectedProject.codeLink}

@@ -9,6 +9,11 @@
 
 
 }
+@media only screen and (max-width: 600px) {
+    .overlayColStart {
+        width: 100%;
+    }
+}
 
 .overlayColEnd {
     flex-direction: column;
@@ -20,5 +25,11 @@
    
 
 
+}
+
+@media only screen and (max-width: 600px) {
+    .overlayColEnd {
+       display: none;
+    }
 }
 
