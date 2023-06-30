@@ -11,6 +11,7 @@ import SuccessModal from "./SuccessModal";
 import { useState } from "react";
 import StarsBg from "../Shared/StarsBg";
 import { Fade, Slide } from "react-awesome-reveal";
+import "./contactMe.css";
 
 const ContactMeBS = () => {
   const [firstName, setFirstName] = useState("");
@@ -60,14 +61,14 @@ const ContactMeBS = () => {
 
   return (
     <Container
-      id="contact"
+      id="contactMe"
       fluid
-      className="h-100 text-light text-warning m-0 p-0 "
+      className="vh-100 text-light text-warning m-0 p-0 contactBG"
     >
-      <StarsBg />
       
-      <Container className="text-warning">
-        <h1 className="py-4">
+      
+      <Container className="text-warning py-5">
+        <h1 className="py-4 my-4">
           <Fade delay={1e3} cascade damping={0.3e-1}>
             Lets Build Something
           </Fade>
@@ -88,9 +89,9 @@ const ContactMeBS = () => {
           }}
         >
           <Slide>
-            <Form ref={form} onSubmit={sendEmail} id="form" name="form">
+            <Form ref={form} onSubmit={sendEmail} id="form" name="form" >
               <Row className="gap-2 d-flex justify-content-evenly">
-                <Col md={6} xs={11}>
+                <Col md={6} xs={11} className="contactForm">
                   <TextInputBS
                     label="First Name"
                     name="firstName"

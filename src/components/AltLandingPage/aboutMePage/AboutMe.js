@@ -1,36 +1,53 @@
-
 import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import "../../../App.css";
+
 import StarsBg from "../Shared/StarsBg";
-import NavBar from "../../navbar/NavBar";
+import thumbPic from "../../images/thumbPic.jpg";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const AboutMe = () => {
+  return (
+    <div
+      className=" d-flex text-center vw-100 vh-100 align-items-center justify-content-center bg-dark position-relative"
+      style={{ zIndex: 2 }}
+      id="aboutMe"
+    >
+      <StarsBg />
+      <Row className="h-75 d-flex align-items-center">
+        <Col sm={5} xs={12} className="">
+          <Container >
+            <Image src={thumbPic} roundedCircle className=" thumbPic " />
+          </Container>
+        </Col>
+      
+        <Col sm={6} xs={12}>
+          <Container className="py-2 text-start">
+            <h2 className="text-warning fs-1 ">
+              Professional Ethos: <strong>Learn & Build</strong>
+            </h2>
+          </Container>
+          <Container className="py-2 text-start">
+            <p className="fs-4 primaryText ">
+              So much to learn and so much to build. I've specialized in
+              understanding the MERN stack and using it to find that magical
+              place where UI/UX, functionality, and performance meet. However,
+              my learning aspirations don't end here. I'm diving into data
+              analysis, machine learning, and particularly, the emerging realms
+              of web3 and AI integration.
+            </p>
 
-    return (
-        <div className="text-center w-100 h-100 align-items-center justify-content-center  ">
-       
-        <h1>a little about me...</h1>
-        <Container className="text-start"><p>Learning and Building - these are the two pillars that define my professional ethos. .</p>
-
-<p>Currently, I'm delving into the intriguing universe of the MERN stack, exploring its vast potential to create robust, scalable
- applications. However, my learning aspirations don't end here. I harbor a keen interest in expanding my knowledge to data 
- analysis, machine learning, and particularly, the emerging realms of web3 and AI integration.</p>
- <h3>Education and Professional Certificates</h3>
- <ul>
-    <li>B.S. Finance,  <i>FGCU</i></li>
-    <li>Front End Development,   <i>Meta</i></li>
-    <li>Python Specialization,   <i>University of Michigan</i></li>
-    <li>AWS Cloud Practitioner Essentials,   <i>Amazon Web Services</i></li>
-    <li>SQL for Data Science,   <i>U.C. Davis</i></li>
-    <li>Google IT Support Professional Certificate,   <i>Google</i></li>
- </ul>
-
-
-
-</Container>
-<NavBar/>
-   </div> 
-   
-   )
-}
+            <i>
+              <p className="primaryText fw-bolder fs-5 text-center">
+                If i'm not learning, I'm building
+              </p>
+            </i>
+          </Container>
+        </Col>
+      </Row>
+    </div>
+  );
+};
 
 export default AboutMe;

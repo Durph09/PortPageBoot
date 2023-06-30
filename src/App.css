@@ -1,3 +1,181 @@
-* {
-font-family: 'Roboto Condensed', sans-serif;
+
+
+.app {
+    font-family: 'Lato', sans-serif; 
 }
+
+
+
+
+
+.primaryText{
+color:#fff4e0;  
+}
+
+.primaryTextGrad {
+    background: -webkit-linear-gradient(#fff4e0, #4b6aa0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.iconColor {
+    color:rgba(255, 244, 224, .9)
+}
+
+.secondText {
+    color: #4696ac;
+}
+
+.thirdText {
+    color: #ebedff
+}
+
+.navBrand {
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+
+.navBrand:hover {
+    transform: scale(1.2);
+}
+
+.navBG {
+  background-color: rgba(2, 2, 2, 0.8);
+}
+
+.thumbPic {
+  max-width: 300px;
+}
+
+
+.block {
+    position: relative;
+    
+    background: linear-gradient(0deg, #000, #272727);
+  }
+  
+  .block:before, .block:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .block:after {
+    filter: blur(50px);
+  }
+
+
+
+  /*box gradient border */
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+  }
+  
+  @property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+  }
+  
+  @property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+  }
+
+  :root {
+    --d: 5500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: #0ff0e1;
+    --c2: rgba(196, 241, 16, .05);
+    --cm-nav-pills-link-active-bg: #4696ac;
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: #4696ac!important;
+    
+  }
+
+  .box {
+    
+    
+   
+    border: 0.4rem solid;
+    border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+    animation: borderRadial var(--d) linear infinite forwards;
+  }
+  
+  @keyframes borderRotate {
+    100% {
+      --angle: 420deg;
+    }
+  }
+  
+  @keyframes borderRadial {
+    20% {
+      --gradX: 100%;
+      --gradY: 50%;
+    }
+    40% {
+      --gradX: 100%;
+      --gradY: 100%;
+    }
+    60% {
+      --gradX: 50%;
+      --gradY: 100%;
+    }
+    80% {
+      --gradX: 0%;
+      --gradY: 50%;
+    }
+    100% {
+      --gradX: 50%;
+      --gradY: 0%;
+    }
+  }
+
+  .navButton {
+    color:#4696ac ;
+    border: solid;
+    border-color: #4696ac;
+    background-color: #000;
+    margin: 2% 2% 2% 2%;
+    width: 150px;
+  }
+
+  .navButton:hover {
+    transform: scale(1.25); /* Zoom in to 1.25 times the original size */
+    background-color: #272727;
+  }
+
+  .navbar-toggler-icon {
+    color: #4696ac!important;
+    background-color: #4696ac;
+    border-radius: 45px;
+  }
+
+  

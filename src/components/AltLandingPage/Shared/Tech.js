@@ -10,9 +10,11 @@ import {
   faPython,
   faJs,
   faPhp,
-  faFigma
+  faFigma,
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useRef, useState } from "react";
+import "./Tech.css";
+import "../../../App.css";
 
 const icons = [
   { icon: faReact },
@@ -25,12 +27,11 @@ const icons = [
   { icon: faFigma },
 ];
 
-
 const IconSphere = () => {
-  const ref= useRef(null)
+  const ref = useRef(null);
   const groupRef = useRef();
   const { docX, docY } = useMouse(ref);
-  const [sphereRadius, setSphereRadius] = useState(20);
+  const [sphereRadius, setSphereRadius] = useState(10);
 
   useEffect(() => {
     groupRef.current.rotation.y = (docX / window.innerWidth) * Math.PI * 2;
@@ -57,16 +58,12 @@ const IconSphere = () => {
   };
 
   return (
-    <group ref={groupRef} position={[0, 0, -100]}>
+    <group ref={groupRef} position={[0, 0, -10]}>
       {icons.map((item, index) => {
         const { x, y, z } = calculateIconPosition(index, icons.length);
         return (
           <Html key={index} position={[x, y, z]} center>
-            <FontAwesomeIcon
-              icon={item.icon}
-              size="5x"
-              style={{ color: "white" }}
-            />
+            <FontAwesomeIcon icon={item.icon} size="5x" className="iconColor" />
           </Html>
         );
       })}
@@ -79,7 +76,8 @@ const CustomOrbitControls = () => {
 
   // Set the initial camera position (zoom level)
   useEffect(() => {
-    camera.position.set(0, 0, 300); // 5units away from the target along the Z-axis
+    camera.position.set(0, 0, 200); // 5units away from the target along the Z-axis
+    console.log(camera.distance);
   }, [camera]);
 
   return <OrbitControls camera={camera} autoRotate />;
@@ -87,16 +85,28 @@ const CustomOrbitControls = () => {
 
 const Tech = () => {
   return (
-    <div 
-    className="h-100 w-100"> 
-    
-      <Canvas className="h-100 w-100 d-flex">
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <IconSphere />
-        <Stars depth={50} radius={10} />
-        <CustomOrbitControls />
-      </Canvas>
+    <div
+      className="vh-100 vw-100 d-flex justify-content-between y mandatory-scroll-snapping"
+      style={{ backgroundColor: "black" }}
+    >
+      <div className="vh-100 vw-100 d-flex position-fixed ">
+        <Canvas>
+          <pointLight position={[10, 10, 10]} />
+          <IconSphere />
+          <Stars depth={50} radius={10} />
+
+          <CustomOrbitControls />
+        </Canvas>
+      </div>
+
+      <div className="overlayColStart text-warning py-4">
+        <div className="px-5 py-5">
+          <h1 className="fw-bolder">Hi,</h1> <h1>I'm Conor</h1>
+          <h1>a web dev</h1>
+          <p className="fw-lighter">Front End Developer / React enthusiest</p>
+        </div>
+      </div>
+      <div className="overlayColEnd"></div>
     </div>
   );
 };

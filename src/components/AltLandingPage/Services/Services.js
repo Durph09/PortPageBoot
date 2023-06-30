@@ -16,7 +16,7 @@ const Services = ({setKey}) => {
   const [selectedService, setSelectedService] = useState(null);
 
     return (
-        <Row>
+        <Row className="position-relative z-2 vh-100 vw-100">
         {ServicesObject.map(service => (
             <Col md={4} sm={12} key={service.id}>
             <div as="button"  onClick={() => {

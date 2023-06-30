@@ -3,6 +3,7 @@
 
 .main {
     overflow-x: hidden;
+
 }
  
 .this-is-tab-content {
@@ -12,6 +13,12 @@
 .first-tab {
     height: 100vh;
     z-index: 200;
+}
+
+.starsBG {
+    /* background-image: url('../../images/spaceBackground4.png');
+    background-size: cover; */
+    background-color: black;
 }
 
  
@@ -76,11 +83,14 @@
         display: flex;
         
     }
+    .introBar {
+        height: 15%;
+        margin-bottom: 5%;
+    }
 
     .image-thumb1 {
         max-width: 100px !important;
-        margin-top: 5%;
-        margin-bottom: 10%;
+       
     }
 
     .navbar1{
