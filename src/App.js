@@ -11,23 +11,18 @@ import SwiperPort from "./components/AltLandingPage/Portfolio/Swiper";
 import "./App.css";
 
 const App = () => {
- 
- 
-
-
   return (
-    <div className="app" >
+    <div className="app">
       <NavBar />
-     {/* <TabNav /> */}
-    <Tech />
-      
-       <AboutMe />
-       <SwiperPort />
-    
+      {/* <TabNav /> */}
+      <Tech />
+
+      <AboutMe />
+      <SwiperPort />
+
       {/* <CoolStuff />*/}
-      
-      <ContactMeBS /> 
-     
+
+      <ContactMeBS />
     </div>
   );
 };

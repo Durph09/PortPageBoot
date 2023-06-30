@@ -10,7 +10,7 @@ const socials = [
   {
     icon: faEnvelope,
     url: "mailto: Crmahaneyweb@gmial.com",
-    label: "Email Me"
+    label: "Email Me",
   },
   {
     icon: faGithub,
@@ -24,25 +24,26 @@ const socials = [
   },
 ];
 
-const handleClick = (id) => () => { 
-  
-  const element = document.getElementById(id); 
-  if (element) { 
-    element.scrollIntoView({ 
-      behavior: "smooth", 
-      block: "start", 
-    }); 
-  } 
-}; 
+const handleClick = (id) => () => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
 export default function NavBar() {
- 
   return (
-    
-    <Navbar collapseOnSelect expand="sm" className="d-flex justify-content-between"  fixed="top" >
+    <Navbar
+      collapseOnSelect
+      expand="sm"
+      className="d-flex justify-content-between overflow-hidden"
+      fixed="top"
+    >
       <div className="d-flex px-3">
         {socials.map(({ icon, url }) => (
-          
           <Navbar.Brand
             className=" navBrand  secondText"
             key={url}
@@ -50,24 +51,35 @@ export default function NavBar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            
-            <FontAwesomeIcon icon={icon} size="3x" key={url} className="w-50 secondText"/>
+            <FontAwesomeIcon
+              icon={icon}
+              size="2x"
+              key={url}
+              className="w-50 secondText"
+            />
           </Navbar.Brand>
-          
         ))}
-    </div>
+      </div>
 
-    <div className="ms-auto">
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" className="secondText" />
-      <Navbar.Collapse id="responsive-navbar-nav" className="text-light">
-        <Nav>
-    <button  className="navButton" onClick={handleClick("aboutMe")}>About Me</button >
-    <button  className="navButton" onClick={handleClick("projects")}>Portfolio</button >
-    <button  className="navButton" onClick={handleClick("contactMe")}>Contact Me</button >
-    </Nav>
-    </Navbar.Collapse>
-    </div>
+      <div className="ms-auto">
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          className="secondText"
+        />
+        <Navbar.Collapse id="responsive-navbar-nav" className="text-light">
+          <Nav>
+            <button className="navButton" onClick={handleClick("aboutMe")}>
+              About Me
+            </button>
+            <button className="navButton" onClick={handleClick("projects")}>
+              Portfolio
+            </button>
+            <button className="navButton" onClick={handleClick("contactMe")}>
+              Contact Me
+            </button>
+          </Nav>
+        </Navbar.Collapse>
+      </div>
     </Navbar>
-    
   );
 }

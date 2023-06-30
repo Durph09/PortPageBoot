@@ -29,9 +29,9 @@ const ContactMeBS = () => {
 
   const sendEmail = (e, values) => {
     e.preventDefault();
-    
-    
-    emailjs.sendForm(
+
+    emailjs
+      .sendForm(
         "service_b4h53ed",
         "template_kt1awy3",
         e.target,
@@ -39,10 +39,9 @@ const ContactMeBS = () => {
       )
       .then(
         (result) => {
-          
           console.log(result.text);
           console.log(firstName);
-          
+
           handleShowModal(firstName);
           e.target.reset();
         },
@@ -65,15 +64,13 @@ const ContactMeBS = () => {
       fluid
       className="vh-100 text-light text-warning m-0 p-0 contactBG"
     >
-      
-      
       <Container className="text-warning py-5">
         <h1 className="py-4 my-4">
           <Fade delay={1e3} cascade damping={0.3e-1}>
             Lets Build Something
           </Fade>
         </h1>
-        
+
         <Formik
           validationSchema={schema}
           onSubmit={(values) => {
@@ -89,7 +86,7 @@ const ContactMeBS = () => {
           }}
         >
           <Slide>
-            <Form ref={form} onSubmit={sendEmail} id="form" name="form" >
+            <Form ref={form} onSubmit={sendEmail} id="form" name="form">
               <Row className="gap-2 d-flex justify-content-evenly">
                 <Col md={6} xs={11} className="contactForm">
                   <TextInputBS
@@ -97,7 +94,6 @@ const ContactMeBS = () => {
                     name="firstName"
                     type="text"
                     placeholder="Name"
-                   
                   />
 
                   <TextInputBS

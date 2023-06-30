@@ -7,38 +7,43 @@ import { useState, useRef, useEffect } from "react";
 import "./FloatingProjects.css";
 import ListGroup from "react-bootstrap/ListGroup";
 import { register } from "swiper/element/bundle";
-import 'swiper/css';
-import { Fade} from "react-awesome-reveal";
+import "swiper/css";
+import { Fade } from "react-awesome-reveal";
 
 register();
 const FloatingProjects = (ProjectList) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProdject] = useState(null);
 
-  
-
   return (
-    <div id="projects" className=" d-flex-col vh-100 vw-100 swiperMain position-relative overflow-hidden align-items-center justify-content-evenly">
+    <div
+      id="projects"
+      className=" d-flex-col vh-100 vw-100 swiperMain position-relative overflow-hidden align-items-center justify-content-evenly"
+    >
+      <h1 className="text-warning mb-4 py-3 mx-1">
+        <Fade delay={1e3} cascade damping={0.3e-1}>
+          Portfolio Projects
+        </Fade>
+      </h1>
 
-<h1 className="text-warning mb-4 py-3 mx-1">
-          <Fade delay={1e3} cascade damping={0.3e-1}>
-            Portfolio Projects
-          </Fade>
-        </h1>
-
-      <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
-    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
-    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true" loop="true"> 
+      <swiper-container
+        class="mySwiper"
+        pagination="true"
+        grab-cursor="true"
+        centered-slides="true"
+        spacebetween
+        slides-per-view="auto"
+        loop="true"
+      >
         {ProjectsList.map((project) => (
           <swiper-slide
-         
             key={project.id}
             onClick={() => {
               setSelectedProdject(project);
               setShowModal(true);
             }}
           >
-            <span className="overlay-text">{project.id}</span> 
+            <span className="overlay-text">{project.id}</span>
 
             <img
               src={project.src}

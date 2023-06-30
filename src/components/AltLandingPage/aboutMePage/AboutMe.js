@@ -10,18 +10,18 @@ import Row from "react-bootstrap/Row";
 const AboutMe = () => {
   return (
     <div
-      className=" d-flex text-center vw-100 vh-100 align-items-center justify-content-center bg-dark position-relative"
+      className=" d-flex text-center vw-100 vh-100 align-items-center justify-content-center bg-dark position-relative overflow-hidden"
       style={{ zIndex: 2 }}
       id="aboutMe"
     >
       <StarsBg />
       <Row className="h-75 d-flex align-items-center">
         <Col sm={5} xs={12} className="">
-          <Container >
+          <Container>
             <Image src={thumbPic} roundedCircle className=" thumbPic " />
           </Container>
         </Col>
-      
+
         <Col sm={6} xs={12}>
           <Container className="py-2 text-start">
             <h2 className="text-warning fs-1 ">
