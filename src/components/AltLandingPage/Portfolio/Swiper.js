@@ -15,6 +15,57 @@ const FloatingProjects = (ProjectList) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProdject] = useState(null);
 
+ 
+
+  
+  
+
+  
+
+  useEffect(() => {
+    // now we need to assign all parameters to Swiper element// swiper parameters
+  const swiperParams = {
+    
+   init: false,
+    class: "mySwiper w-100",
+    pagination: true,
+    grabCursor: true,
+    centeredSlides: true,
+    spacebetween: true,
+    loop: true, 
+    breakpoints: {
+      
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 60
+      },
+    },
+    on: {
+      init() {
+        // ...
+      },
+    },
+  };
+
+    let swiperEl = document.querySelector('swiper-container');
+    if(swiperEl) {
+      Object.assign(swiperEl, swiperParams);
+
+      // and now initialize it
+      swiperEl.initialize();
+      console.log("swiper params set");
+    }
+  }, []);
+
   return (
     <div
       id="projects"
@@ -23,13 +74,10 @@ const FloatingProjects = (ProjectList) => {
       <h1 className="text-warning mb-4 py-3 mx-1">Portfolio Projects</h1>
 
       <swiper-container
-        class="mySwiper w-100"
-        pagination="true"
-        grab-cursor="true"
-        centered-slides="true"
-        spacebetween
-        slides-per-view="auto"
-        loop="true"
+     
+        
+        
+            
       >
         {ProjectsList.map((project) => (
           <swiper-slide
