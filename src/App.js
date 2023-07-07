@@ -12,7 +12,7 @@ import "./App.css";
 
 import Hotjar from '@hotjar/browser';
 
-const siteId = 3564984;
+const siteId = process.env.HOT_JAR_ID;
 const hotjarVersion = 6;
 
 Hotjar.init(siteId, hotjarVersion);
