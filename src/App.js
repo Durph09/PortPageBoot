@@ -10,6 +10,13 @@ import "./components/AltLandingPage/Shared/LandingFrame.css";
 import SwiperPort from "./components/AltLandingPage/Portfolio/Swiper";
 import "./App.css";
 
+import Hotjar from '@hotjar/browser';
+
+const siteId = 3564984;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
+
 const App = () => {
   return (
     <div className="app">

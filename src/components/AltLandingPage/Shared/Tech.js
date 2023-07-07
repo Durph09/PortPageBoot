@@ -86,7 +86,7 @@ const CustomOrbitControls = () => {
 const Tech = () => {
   return (
     <div
-      className="vh-100 vw-100 d-flex justify-content-between y mandatory-scroll-snapping"
+      className="vh-100 vw-100 d-flex justify-content-between "
       style={{ backgroundColor: "black" }}
     >
       <div className="vh-100 vw-100 d-flex position-fixed ">
