@@ -10,12 +10,9 @@ import "./components/AltLandingPage/Shared/LandingFrame.css";
 import SwiperPort from "./components/AltLandingPage/Portfolio/Swiper";
 import "./App.css";
 
-import Hotjar from '@hotjar/browser';
 
-const siteId = process.env.HOT_JAR_ID;
-const hotjarVersion = 6;
 
-Hotjar.init(siteId, hotjarVersion);
+
 
 const App = () => {
   return (

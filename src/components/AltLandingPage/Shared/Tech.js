@@ -1,5 +1,7 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Stars, Html } from "@react-three/drei";
+import * as THREE from 'three';
+import { Vector } from "three";
 import { useMouse } from "react-use";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -73,16 +75,27 @@ const IconSphere = () => {
 
 const CustomOrbitControls = () => {
   const { camera } = useThree();
+  let start = Date.now();
+  const duration = 8000; //seconds in milliseconds
+  const startPosition = new THREE.Vector3(0, 0, 1000);
+  const endPosition = new THREE.Vector3(0, 0, 100);
 
-  // Set the initial camera position (zoom level)
   useEffect(() => {
-    camera.position.set(0, 0, 200); // 5units away from the target along the Z-axis
-    console.log(camera.distance);
+    camera.position.copy(startPosition);
   }, [camera]);
+
+  useFrame(() => {
+    const elapsed = Date.now() - start;
+    if (elapsed < duration) {
+      const alpha = elapsed / duration; // Alpha goes from 0 to 1 over 'duration' ms
+
+      // Linearly interpolate between the start and end positions
+      camera.position.lerpVectors(startPosition, endPosition, alpha);
+    }
+  });
 
   return <OrbitControls camera={camera} autoRotate />;
 };
-
 const Tech = () => {
   return (
     <div
