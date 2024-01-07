@@ -8,27 +8,24 @@ import Row from "react-bootstrap/Row";
 
 const AboutMe = () => {
   return (
-    <div
-      className=" d-flex text-center vw-100  align-items-center justify-content-center position-relative "
+    <Row
+      className=" d-flex vw-100 vh-100  align-items-center justify-content-center position-relative "
       style={{ zIndex: 2 }}
       id="aboutMe"
     >
       
-      <Row className="h-75 d-flex align-items-center">
-        <Col sm={5} xs={12} className="">
-          <Container>
-            <Image src={thumbPic} roundedCircle className=" thumbPic " />
-          </Container>
+      <Col sm={12} md={6} className="d-flex ">
+            <Image src={thumbPic} roundedCircle className="thumbPic m-auto " />
         </Col>
-
-        <Col sm={6} xs={12}>
-          <div className="textBG">
-          <Container className="py-2 text-start ">
+       
+       <Col sm={12} md={6} className="d-flex text-center">
+          <div className="textBG m-auto">
+          <Container className="py-2">
             <h2 className="text-warning fs-1 ">
               Professional Ethos: <strong>Learn & Build</strong>
             </h2>
           </Container>
-          <Container className="py-2 text-start">
+          <Container className="py-2">
             <p className="fs-2 primaryText font-weight-bold ">
               So much to learn and so much to build. I've specialized in
               understanding the MERN stack and using it to find that magical
@@ -42,9 +39,8 @@ const AboutMe = () => {
             </i>
           </Container>
           </div>
-        </Col>
-      </Row>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

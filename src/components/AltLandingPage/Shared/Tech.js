@@ -76,13 +76,13 @@ const IconSphere = () => {
 const CustomOrbitControls = () => {
   const { camera } = useThree();
   let start = Date.now();
-  const duration = 8000; //seconds in milliseconds
-  const startPosition = new THREE.Vector3(0, 0, 1000);
-  const endPosition = new THREE.Vector3(0, 0, 100);
+  const duration = 10000; //seconds in milliseconds
+  const startPosition = new THREE.Vector3(0, 0, 0);
+  const endPosition = new THREE.Vector3(0, 0, 300);
 
   useEffect(() => {
     camera.position.copy(startPosition);
-  }, [camera]);
+  }, []);
 
   useFrame(() => {
     const elapsed = Date.now() - start;
