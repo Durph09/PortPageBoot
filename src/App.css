@@ -2,12 +2,9 @@
 
 .app {
     font-family: 'Lato', sans-serif; 
+    overflow-x: hidden;
    
 }
-
-
-
-
 
 
 .primaryText{
@@ -59,17 +56,21 @@ color:#fff4e0;
 }
 
 .aboutMeMain{
-  background-image: 
+  /* background-image: 
     linear-gradient(
       179deg in oklab, 
       oklch(0% 0.50 239) 3% 3%, oklch(52% 0.50 200 / 29%) 87% 87%
     )
-  ;
+  ; */
+
+  background-image: 
+  linear-gradient(180deg, #000000 25%, #0098d74a 100%)
+;
 
 }
 
 
-/* .block {
+.block {
     position: relative;
     
     background: linear-gradient(0deg, #000, #272727);
@@ -103,8 +104,8 @@ color:#fff4e0;
   
   .block:after {
     filter: blur(50px);
-  } */
-
+  } 
+ 
 
 
   /*box gradient border */
@@ -141,7 +142,7 @@ color:#fff4e0;
     
   }
 
-  /* .box {
+   .box {
     
     
    
@@ -177,7 +178,7 @@ color:#fff4e0;
       --gradX: 50%;
       --gradY: 0%;
     }
-  } */
+  } 
 
   .navButton {
     color:#4696ac ;

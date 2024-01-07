@@ -9,9 +9,9 @@ import "./App.css";
 const App = () => {
   return (
     <div className="app">
-      <NavBar />
+      <NavBar /><div className="aboutMeMain">
       <Tech />
-      <div className="aboutMeMain">
+      
       <AboutMe />
       <Swiper />
       <ContactMeBS />
