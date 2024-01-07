@@ -2,7 +2,7 @@
 
 .app {
     font-family: 'Lato', sans-serif; 
-    overflow: hidden!important; 
+   
 }
 
 
@@ -21,7 +21,7 @@ color:#fff4e0;
 }
 
 .iconColor {
-    color:rgba(211, 190, 153, 0.9)
+    color:rgba(144, 142, 139, 0.9)
 }
 .textBG {
   background-image: 
@@ -69,7 +69,7 @@ color:#fff4e0;
 }
 
 
-.block {
+/* .block {
     position: relative;
     
     background: linear-gradient(0deg, #000, #272727);
@@ -103,7 +103,7 @@ color:#fff4e0;
   
   .block:after {
     filter: blur(50px);
-  }
+  } */
 
 
 
@@ -141,7 +141,7 @@ color:#fff4e0;
     
   }
 
-  .box {
+  /* .box {
     
     
    
@@ -177,7 +177,7 @@ color:#fff4e0;
       --gradX: 50%;
       --gradY: 0%;
     }
-  }
+  } */
 
   .navButton {
     color:#4696ac ;
