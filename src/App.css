@@ -23,6 +23,14 @@ color:#fff4e0;
 .iconColor {
     color:rgba(255, 244, 224, .9)
 }
+.textBG {
+  background-image: 
+  radial-gradient(
+    farthest-corner circle at 51% 51% in oklab, 
+    oklch(0% 0.50 239 / 87%) 3% 3%, oklch(52% 0.50 200 / 71%) 148% 148%
+  )
+;
+}
 
 .secondText {
     color: #4696ac;
@@ -47,6 +55,17 @@ color:#fff4e0;
 
 .thumbPic {
   max-width: 300px;
+  width: 50%;
+}
+
+.aboutMeMain{
+  background-image: 
+    linear-gradient(
+      179deg in oklab, 
+      oklch(0% 0.50 239) 3% 3%, oklch(52% 0.50 200 / 29%) 87% 87%
+    )
+  ;
+
 }
 
 

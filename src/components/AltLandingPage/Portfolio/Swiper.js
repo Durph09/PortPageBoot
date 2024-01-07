@@ -1,17 +1,16 @@
 import { ProjectsList } from "./ProjectsList";
 import Modal from "react-bootstrap/Modal";
 import Carousel from "react-bootstrap/Carousel";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-import { useState, useRef, useEffect } from "react";
+
+import { useState, useEffect } from "react";
 import "./FloatingProjects.css";
-import ListGroup from "react-bootstrap/ListGroup";
+
 import { register } from "swiper/element/bundle";
 import "swiper/css";
-import { Fade } from "react-awesome-reveal";
+
 
 register();
-const FloatingProjects = (ProjectList) => {
+const Swiper = (ProjectList) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProdject] = useState(null);
 
@@ -22,17 +21,17 @@ const FloatingProjects = (ProjectList) => {
       class: "mySwiper w-100",
       pagination: true,
       grabCursor: true,
-      centeredSlides: true,
+      centeredSlides: false,
       spacebetween: true,
       loop: true,
       breakpoints: {
         480: {
-          slidesPerView: 1,
+          slidesPerView: 2,
           spaceBetween: 30,
         },
         // when window width is >= 640px
         768: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 40,
         },
         992: {
@@ -53,16 +52,16 @@ const FloatingProjects = (ProjectList) => {
 
       // and now initialize it
       swiperEl.initialize();
-      console.log("swiper params set");
+   
     }
   }, []);
 
   return (
     <div
       id="projects"
-      className=" d-flex-col vh-100 vw-100 swiperMain position-relative overflow-hidden align-items-center justify-content-evenly"
+      className=" d-flex-col vh-100 vw-100 swiperMain position-relative  align-items-center justify-content-evenly"
     >
-      <h1 className="text-warning mb-4 py-3 mx-1">Portfolio Projects</h1>
+      <h2 className="text-warning mb-4 py-3 mx-1">Portfolio Projects</h2>
 
       <swiper-container>
         {ProjectsList.map((project) => (
@@ -126,4 +125,4 @@ const FloatingProjects = (ProjectList) => {
   );
 };
 
-export default FloatingProjects;
+export default Swiper;

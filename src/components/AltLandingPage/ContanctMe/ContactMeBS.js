@@ -62,7 +62,7 @@ const ContactMeBS = () => {
     <Container
       id="contactMe"
       fluid
-      className="vh-100 text-light text-warning m-0 p-0 contactBG"
+      className="text-light text-warning m-0 p-0 contactBG"
     >
       <Container className="text-warning py-5">
         <h1 className="py-4 my-4">

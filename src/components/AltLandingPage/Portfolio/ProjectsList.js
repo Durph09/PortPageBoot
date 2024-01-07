@@ -10,7 +10,7 @@ import bayPinesFoundationHome from "../../images/bayPinesFoundationHome.png";
 import bayPinesFoundation2 from "../../images/bayPinesFoundation2.png";
 import bayPinesFoundation3 from "../../images/bayPinesFoundation3.png";
 
-import blogStandard from "../../images/blogStandard.png";
+
 import blogStandardBlog from "../../images/blogStandardBlog.png";
 import blogStandardGenerate from "../../images/blogStandardGenerate.png";
 import blogStandardHome from "../../images/blogStandardHome.png";
