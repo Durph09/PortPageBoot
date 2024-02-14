@@ -64,7 +64,7 @@ const ContactMeBS = () => {
       fluid
       className="text-light text-warning m-0 p-0 contactBG"
     >
-      <Container className="text-warning py-5">
+      <Container className=" text-warning py-5 z-3">
         <h1 className="py-4 my-4">
           <Fade delay={1e3} cascade damping={0.3e-1}>
             Lets Build Something

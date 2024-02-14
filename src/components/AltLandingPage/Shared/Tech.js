@@ -38,7 +38,7 @@ const IconSphere = () => {
   useEffect(() => {
     groupRef.current.rotation.y = (docX / window.innerWidth) * Math.PI * 2;
     groupRef.current.rotation.x = (docY / window.innerHeight) * Math.PI * 2;
-  }, [docX, docY]);
+  }, []);
 
   useFrame(({ clock }) => {
     const scrollSpeed = 0.1;

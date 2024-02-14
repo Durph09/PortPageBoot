@@ -14,47 +14,51 @@ const Swiper = (ProjectList) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProdject] = useState(null);
 
-  useEffect(() => {
-    // now we need to assign all parameters to Swiper element// swiper parameters
-    const swiperParams = {
-      init: false,
-      class: "mySwiper w-100",
-      pagination: true,
-      grabCursor: true,
-      centeredSlides: false,
-      spacebetween: true,
-      loop: true,
-      breakpoints: {
-        480: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        // when window width is >= 640px
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-        992: {
-          slidesPerView: 3,
-          spaceBetween: 60,
-        },
-      },
-      on: {
-        init() {
-          // ...
-        },
-      },
-    };
+  // useEffect(() => {
+  //   // now we need to assign all parameters to Swiper element// swiper parameters
+  //   const swiperParams = {
+  //     init: false,
+  //     class: "mySwiper w-100",
+  //     pagination: true,
+     
+  //     centeredSlides: false,
+      
+  //     spacebetween: true,
+  //     loop: true,
+  //     speed: 400,
+  //     breakpoints: {
+  //       480: {
+  //         slidesPerView: 2,
+  //         spaceBetween: 30,
+  //         speed: 600,
+  //       },
+  //       // when window width is >= 640px
+  //       768: {
+  //         slidesPerView: 3,
+  //         spaceBetween: 40,
+  //         speed: 600
+  //       },
+  //       992: {
+  //         slidesPerView: 3,
+  //         spaceBetween: 60,
+  //       },
+  //     },
+  //     on: {
+  //       init() {
+  //         // ...
+  //       },
+  //     },
+  //   };
 
-    let swiperEl = document.querySelector("swiper-container");
-    if (swiperEl) {
-      Object.assign(swiperEl, swiperParams);
+  //   let swiperEl = document.querySelector("swiper-container");
+  //   if (swiperEl) {
+  //     Object.assign(swiperEl, swiperParams);
 
-      // and now initialize it
-      swiperEl.initialize();
+  //     // and now initialize it
+  //     swiperEl.initialize();
    
-    }
-  }, []);
+  //   }
+  // }, []);
 
   return (
     <div
@@ -63,7 +67,7 @@ const Swiper = (ProjectList) => {
     >
       <h2 className="text-warning mb-4 py-3 mx-1">Portfolio Projects</h2>
 
-      <swiper-container>
+      <swiper-container   pagination="true" pagination-clickable="true" navigation="true" speed="800" slides-per-view="auto"  >
         {ProjectsList.map((project) => (
           <swiper-slide
             key={project.id}
